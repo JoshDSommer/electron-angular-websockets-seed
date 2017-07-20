@@ -1,28 +1,26 @@
-# AngularElectron
+# Electron + Angular CLI + WebSockets
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
+This is starter or sample application I setup to test integrating these three technologies together.
 
-## Development server
+### Global Dependencies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Angular CLI - `npm install -g @angular/cli`
 
-## Code scaffolding
+Electron - `npm install -g electron`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+### Development work flow.
 
-## Build
+install dependencies with `npm i`
+run application with `npm start`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Testing sockets
 
-## Running unit tests
+I've found Smart Websocket Client for Chrome to be extremely helpful with testing WebSockets you can get it [here](https://chrome.google.com/webstore/detail/smart-websocket-client/omalebghpgejjiaoknljcfmglgbpocdp)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### References
+This blog post helped with integrating the Angular CLI and Electron
+[http://www.blog.bdauria.com/?p=806](http://www.blog.bdauria.com/?p=806)
 
-## Running end-to-end tests
+this gist was extremely helpful with getting express running in electron [https://gist.github.com/maximilian-ruppert/a446a7ee87838a62099d](https://gist.github.com/maximilian-ruppert/a446a7ee87838a62099d)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+this StackOverflow post was helpful with getting a local ip address [https://stackoverflow.com/a/38929214/771630](https://stackoverflow.com/a/38929214/771630)
