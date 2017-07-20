@@ -2,13 +2,16 @@
   "name": "angular-electron",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "electron.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run electron",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-electron": "ng build --base-href . --prod --aot",
+    "electron": "npm run build-electron && electron dist/"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +25,9 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.3",
     "rxjs": "^5.1.0",
+    "ws": "^3.0.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
