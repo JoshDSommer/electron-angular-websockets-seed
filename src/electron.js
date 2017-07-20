@@ -21,14 +21,14 @@ function createWindow() {
     console.log(`Listening on ${PORT}`);
   });
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600 })
+  win = new BrowserWindow({ width: 800, height: 600 });
 
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true
-  }))
+  }));
 
   // Open the DevTools.
   // win.webContents.openDevTools()
@@ -44,36 +44,38 @@ function createWindow() {
   const wsServer = new Server({ server });
   wsServer.on('connection', (ws) => {
     ws.on('close', () => console.log('Client disconnected,', server.address()));
-    ws.on('message', handleMessageFromClient)
+    ws.on('message', handleMessageFromClient);
   });
+
   const handleMessageFromClient = data => {
     wsServer.clients.forEach(client => notifyClients(client, data));
   };
   const notifyClients = (client, data) => {
     client.send(JSON.stringify(data))
   };
+
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', createWindow);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
-})
+});
 
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (win === null) {
-    createWindow()
+    createWindow();
   }
-})
+});
 
 // In this file you can includ
